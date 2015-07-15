@@ -68,7 +68,15 @@ The `cb` is called with `(err, body, response)` where `err` will be null/undefin
 
 ## Running Demos & Tests
 
-Copy your private key into a JSON file in `test/.api.json`, like this:
+Clone & install:
+
+```sh
+git clone https://github.com/mattdesl/marvel-comics-api.git
+cd marvel-comics-api
+npm install
+```
+
+You will need a Marvel Developer account. Once you have API keys, copy them into a file in `test/.api.json` that looks like this:
 
 ```json
 {
@@ -77,13 +85,9 @@ Copy your private key into a JSON file in `test/.api.json`, like this:
 }
 ```
 
-Now you can git clone, install, and run the tests or demo:
+Now you can run the tests and demos:
 
-```sh
-git clone https://github.com/mattdesl/marvel-comics-api.git
-cd marvel-comics-api
-npm install
-
+```
 # run browser demo on localhost:9966
 npm start
 
