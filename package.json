@@ -1,0 +1,58 @@
+{
+  "name": "marvel-comics-api",
+  "version": "1.0.0",
+  "description": "a small wrapper around the Marvel Comics API",
+  "main": "index.js",
+  "license": "MIT",
+  "browser": {
+    "got": "./lib/xhr.js"
+  },
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {
+    "MD5": "^1.2.2",
+    "got": "^3.3.0",
+    "object-assign": "^3.0.0",
+    "querystring": "^0.2.0",
+    "url-join": "0.0.1",
+    "xhr": "^2.0.2"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.6",
+    "budo": "^4.1.0",
+    "disc": "^1.3.2",
+    "faucet": "0.0.1",
+    "garnish": "^2.1.3",
+    "tape": "^4.0.0",
+    "testling": "^1.7.1"
+  },
+  "scripts": {
+    "start": "budo test/demo.js:bundle.js --dir test | garnish",
+    "test-node": "node test/index.js | faucet",
+    "test-browser": "browserify test/index.js | testling | faucet",
+    "test": "npm run test-node && npm run test-browser"
+  },
+  "keywords": [
+    "marvel",
+    "api",
+    "stream",
+    "json",
+    "get",
+    "marvels",
+    "universe",
+    "comic",
+    "character",
+    "characters"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/marvel-comics-api.git"
+  },
+  "homepage": "https://github.com/mattdesl/marvel-comics-api",
+  "bugs": {
+    "url": "https://github.com/mattdesl/marvel-comics-api/issues"
+  }
+}
