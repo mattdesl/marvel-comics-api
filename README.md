@@ -9,7 +9,7 @@ A simple interface around the [Marvel Comics API](http://developer.marvel.com/do
 
 ## Motivation
 
-The existing modules are a bit over-engineered and also 300-400kb after compression. This one has a simpler interface, uses [xhr](http://npmjs.com/package/xhr) in the browser, and bundles to about 42kb (mostly due to Browserify's `buffer` built-ins).
+The existing modules are a bit over-engineered and also 300-400kb after compression. This one has a simpler interface, uses [xhr](http://npmjs.com/package/xhr) in the browser, and bundles to about 12kb.
 
 ## Install
 

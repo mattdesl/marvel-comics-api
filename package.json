@@ -13,8 +13,8 @@
     "url": "https://github.com/mattdesl"
   },
   "dependencies": {
-    "MD5": "^1.2.2",
     "got": "^3.3.0",
+    "md5": "^2.0.0",
     "object-assign": "^3.0.0",
     "querystring": "^0.2.0",
     "url-join": "0.0.1",
@@ -30,6 +30,7 @@
     "testling": "^1.7.1"
   },
   "scripts": {
+    "visualize": "browserify index.js --full-paths | uglifyjs -cm | discify --open",
     "start": "budo test/demo.js:bundle.js --dir test | garnish",
     "test-node": "node test/index.js | faucet",
     "test-browser": "browserify test/index.js | testling | faucet",

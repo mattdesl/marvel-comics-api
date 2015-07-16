@@ -1,6 +1,6 @@
 var urljoin = require('url-join')
 var assign = require('object-assign')
-var md5 = require('MD5')
+var md5 = require('md5')
 
 // replaced by xhr in browser
 var request = require('got')
@@ -19,8 +19,11 @@ function marvelApi (api, opt, cb) {
   }
 
   var time = String(Date.now())
+  
+  // strip start and end slash to avoid Marvel 404ing
+  api = api.replace(/^\/|\/$/g, '')
   var url = urljoin(endpoint, version, 'public', api)
-
+  
   opt.query = assign({}, opt.query, {
     apikey: publicKey,
     ts: time,
