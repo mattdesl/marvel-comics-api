@@ -2,35 +2,43 @@ var noop = function () {}
 var api = require('../')
 var publicKey = require('./key-public.json')
 
-var pages = 4
+var pages = 0
 var numPages = 0
 var images = []
 var ignores = [
-  'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708',
   'http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708'
 ]
 
-paginate({ limit: 40 }, function (err) {
-  if (err) throw err
+var container = document.querySelector('.images')
+var error = document.querySelector('.error')
+
+paginate({
+  limit: 50
+}, function (err) {
+  if (err) {
+    error.innerText = 'Error: ' + err.message
+    error.removeAttribute('hidden')
+    throw err
+  }
+  
   console.log('Total images:', images.length)
 })
-
-var parent = document.createElement('div')
-document.body.appendChild(parent)
 
 function paginate (query, cb) {
   cb = cb || noop
   query = query || {}
   api('characters', {
     publicKey: publicKey,
-    query: query
+    query: query,
+    timeout: 6000
   }, function (err, body, resp) {
-    if (err) return cb(err)
+    if (err) {
+      return cb(new Error('invalid request; Marvel server may have timed out'))
+    }
     if (!(/^2/.test(resp.statusCode))) {
-      throw new Error(body.status || body.message)
+      return cb(new Error(body.status || body.message))
     }
     var data = body.data
-
     data.results
       .filter(validItem)
       .forEach(function (item) {
@@ -40,7 +48,7 @@ function paginate (query, cb) {
         
         var figure = document.createElement('figure')
         figure.style.backgroundImage = 'url(' + uri + ')'
-        parent.appendChild(figure)
+        container.appendChild(figure)
       })
 
     // paginate

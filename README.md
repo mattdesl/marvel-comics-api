@@ -4,8 +4,9 @@
 
 A simple interface around the [Marvel Comics API](http://developer.marvel.com/documentation/getting_started). Suited for Node and the Browser.
 
-<img src="http://i.imgur.com/bwmmTSt.jpg" width="80%" />  
-<sup>screenshot from [the demo](./test/demo.js)</sup>
+[demo](http://mattdesl.github.io/marvel-comics-api/test/) - [source](./test/demo.js)
+
+[<img src="http://i.imgur.com/bwmmTSt.jpg" width="80%" />](http://mattdesl.github.io/marvel-comics-api/test/)
 
 ## Motivation
 

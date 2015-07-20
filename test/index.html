@@ -24,10 +24,18 @@
     -o-background-size: cover;
     background-size: cover;
   }
+  .error {
+    font-family: 'Courier New', monospace;
+    color: rgb(239, 38, 38);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px;
+  }
   </style>
 </head>
 <body>
-  <script src="bundle.js"></script>
-  <figure></figure>
+  <div class="images"></div>
+  <div class="error" hidden="true"></div>
+  <script src="bundle.js" async></script>
 </body>
 </html>
