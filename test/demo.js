@@ -2,7 +2,7 @@ var noop = function () {}
 var api = require('../')
 var publicKey = require('./key-public.json')
 
-var pages = 0
+var pages = 2
 var numPages = 0
 var images = []
 var ignores = [
