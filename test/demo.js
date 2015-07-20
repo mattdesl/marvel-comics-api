@@ -1,6 +1,6 @@
-var conf = require('./.api.json')
 var noop = function () {}
 var api = require('../')
+var publicKey = require('./key-public.json')
 
 var pages = 4
 var numPages = 0
@@ -22,11 +22,13 @@ function paginate (query, cb) {
   cb = cb || noop
   query = query || {}
   api('characters', {
-    publicKey: conf.publicKey,
-    privateKey: conf.privateKey,
+    publicKey: publicKey,
     query: query
-  }, function (err, body) {
+  }, function (err, body, resp) {
     if (err) return cb(err)
+    if (!(/^2/.test(resp.statusCode))) {
+      throw new Error(body.status || body.message)
+    }
     var data = body.data
 
     data.results

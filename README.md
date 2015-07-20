@@ -41,6 +41,8 @@ api('characters', {
 })
 ```
 
+In the browser, and once you've set up referrers, the `privateKey` field is not needed.
+
 [Consult the API documentation](https://developer.marvel.com/) for details on the JSON response.
 
 ## Usage
@@ -56,7 +58,7 @@ Options:
 - `publicKey` (string) 
   - **required** - your public API key
 - `privateKey` (string)
-  - **required** - your private API key
+  - **optional** - your private API key, see [Private Key](#private-key) for details
 - `query` (object) 
   - query parameters given to the request, such as `limit` or `'nameStartsWith'`
 - `timeout` (number)
@@ -68,9 +70,17 @@ Other parameters will be sent to [got](npmjs.com/package/got) (node) and [xhr](n
 
 The `cb` is called with `(err, body, response)` where `err` will be null/undefined if the request succeeds, `body` will be a parsed JSON object from the request, and `response` will be the response headers from the XHR/HTTP request.
 
+## Private Key
+
+The `privateKey` is necessary for server-side use. 
+
+In the browser, if you've set up authorized referrers in your [Marvel Developer Account](https://developer.marvel.com/account), you can ignore the `privateKey` field. This way you can avoid publishing your private key in the final JavaScript bundle. 
+
+However, it can still be useful to use `privateKey` in the browser for quick prototyping and a unified code path.
+
 ## Running Demos & Tests
 
-Clone & install:
+If you want to run the unit tests and demo from source:
 
 ```sh
 git clone https://github.com/mattdesl/marvel-comics-api.git
@@ -78,24 +88,23 @@ cd marvel-comics-api
 npm install
 ```
 
-You will need a Marvel Developer account. Once you have API keys, copy them into a file in `test/.api.json` that looks like this:
+You will need a Marvel Developer account. Once you have API keys, you will need to change the `test/key-public.json` to a string with your public API. Then you will need to add a new file, `test/key-private.json` with a string containing your private key, like this:
 
 ```json
-{
-  "privateKey": "egadg545151232d02ea0b9asdfasdfd5699a",
-  "publicKey": "badsg1cbadsggagafdh0"
-}
+"fgavg545151232d02ea0b9asdfasdfd5699a"
 ```
 
-Now you can run the tests and demos:
+After that, you should be able to run the tests and demos:
 
 ```
-# run browser demo on localhost:9966
+# run browser demo on 127.0.0.1:9966
 npm start
 
 # run node/browser unit tests
 npm test
 ```
+
+The browser demo will only work locally once you've authorized `127.0.0.1` (your local IP) as a referrer.
 
 ## See Also
 

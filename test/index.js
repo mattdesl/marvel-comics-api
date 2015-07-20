@@ -1,12 +1,13 @@
 var api = require('../')
 var test = require('tape')
-var conf = require('./.api.json')
+var publicKey = require('./key-public.json')
+var privateKey = require('./key-private.json')
 
-test('streams Marvel API JSON', function (t) {
+test('requests Marvel API JSON', function (t) {
   t.plan(3)
   api('characters', {
-    publicKey: conf.publicKey,
-    privateKey: conf.privateKey,
+    publicKey: publicKey,
+    privateKey: privateKey,
     query: {
       limit: 2
     }
@@ -21,8 +22,8 @@ test('streams Marvel API JSON', function (t) {
 test('allows slashes in API entry', function (t) {
   t.plan(3)
   api('/characters/', {
-    publicKey: conf.publicKey,
-    privateKey: conf.privateKey,
+    publicKey: publicKey,
+    privateKey: privateKey,
     query: {
       limit: 2
     }

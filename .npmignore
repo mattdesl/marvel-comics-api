@@ -8,4 +8,4 @@ test.js
 demo/
 .npmignore
 LICENSE.md
-test/.api.json
+test/key-private.json
