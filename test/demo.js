@@ -36,7 +36,8 @@ function paginate (query, cb) {
       .forEach(function (item) {
         var thumb = item.thumbnail
         var uri = thumb.path + '/standard_medium.' + thumb.extension
-
+        images.push(uri)
+        
         var figure = document.createElement('figure')
         figure.style.backgroundImage = 'url(' + uri + ')'
         parent.appendChild(figure)
