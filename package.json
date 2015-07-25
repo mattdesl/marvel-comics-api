@@ -18,6 +18,7 @@
     "object-assign": "^3.0.0",
     "querystring": "^0.2.0",
     "url-join": "0.0.1",
+    "url-set-query": "^1.0.0",
     "xhr": "^2.0.2"
   },
   "devDependencies": {
