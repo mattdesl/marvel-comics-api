@@ -79,7 +79,7 @@ In the browser, if you've set up authorized referrers in your [Marvel Developer 
 
 However, it can still be useful to use `privateKey` in the browser for quick prototyping and a unified code path.
 
-## Running Demos & Tests
+## Building from Source
 
 If you want to run the unit tests and demo from source:
 
@@ -89,23 +89,31 @@ cd marvel-comics-api
 npm install
 ```
 
-You will need a Marvel Developer account. Once you have API keys, you will need to change the `test/key-public.json` to a string with your public API. Then you will need to add a new file, `test/key-private.json` with a string containing your private key, like this:
+#### running the demo
+
+You can run the demo without a Marvel Developer account.
+
+```sh
+npm run start
+```
+
+Now open [http://127.0.0.1:9966/](http://127.0.0.1:9966/) in your browser to see the result.
+
+#### running tests
+
+You will need a Marvel Developer account to run the tests. Once you have API keys, you will need to change the `test/key-public.json` to a string with your public API. Then you will need to add a new file, `test/key-private.json` with a string containing your private key, like this:
 
 ```json
 "fgavg545151232d02ea0b9asdfasdfd5699a"
 ```
 
-After that, you should be able to run the tests and demos:
+After that, you should be able to run the tests in Node/browser:
 
-```
-# run browser demo on 127.0.0.1:9966
-npm start
-
-# run node/browser unit tests
+```sh
 npm test
 ```
 
-The browser demo will only work locally once you've authorized `127.0.0.1` (your local IP) as a referrer.
+Using your own Marvel Account, the browser demo will only work locally once you've authorized `127.0.0.1` (your local IP) as a referrer.
 
 ## See Also
 
