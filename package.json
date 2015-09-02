@@ -4,9 +4,6 @@
   "description": "a small wrapper around the Marvel Comics API",
   "main": "index.js",
   "license": "MIT",
-  "browser": {
-    "got": "./lib/xhr.js"
-  },
   "author": {
     "name": "Matt DesLauriers",
     "email": "dave.des@gmail.com",
@@ -19,7 +16,8 @@
     "querystring": "^0.2.0",
     "url-join": "0.0.1",
     "url-set-query": "^1.0.0",
-    "xhr": "^2.0.2"
+    "xhr": "^2.0.2",
+    "xhr-request": "^1.0.1"
   },
   "devDependencies": {
     "browserify": "^10.2.6",

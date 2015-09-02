@@ -1,6 +1,6 @@
 var urljoin = require('url-join')
 var assign = require('object-assign')
-var request = require('got')
+var request = require('xhr-request')
 var md5 = require('md5')
 
 var version = 'v1'

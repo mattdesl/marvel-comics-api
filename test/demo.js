@@ -29,6 +29,7 @@ function paginate (query, cb) {
   query = query || {}
   api('characters', {
     publicKey: publicKey,
+    privateKey: require('./key-private.json'),
     query: query,
     timeout: 6000
   }, function (err, body, resp) {
