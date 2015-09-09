@@ -10,7 +10,7 @@ A simple interface around the [Marvel Comics API](http://developer.marvel.com/do
 
 ## Motivation
 
-The existing modules ([marvel](https://www.npmjs.com/package/marvel), [marvel-api](https://www.npmjs.com/package/marvel-api)) are a bit over-engineered and also 300-400kb after compression. This one has a simpler interface, uses [xhr](http://npmjs.com/package/xhr) in the browser, and bundles to roughly 12kb.
+The existing modules ([marvel](https://www.npmjs.com/package/marvel), [marvel-api](https://www.npmjs.com/package/marvel-api)) are a bit over-engineered and also 300-400kb after compression. This one has a simpler interface, uses [xhr](http://npmjs.com/package/xhr) in the browser, and bundles to roughly 13kb.
 
 ## Install
 

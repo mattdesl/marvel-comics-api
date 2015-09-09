@@ -10,13 +10,9 @@
     "url": "https://github.com/mattdesl"
   },
   "dependencies": {
-    "got": "^3.3.0",
     "md5": "^2.0.0",
     "object-assign": "^3.0.0",
-    "querystring": "^0.2.0",
     "url-join": "0.0.1",
-    "url-set-query": "^1.0.0",
-    "xhr": "^2.0.2",
     "xhr-request": "^1.0.1"
   },
   "devDependencies": {
