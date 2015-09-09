@@ -35,5 +35,5 @@ function marvelApi (api, opt, cb) {
   // strip start and end slash to avoid Marvel 404ing
   api = api.replace(/^\/|\/$/g, '')
   var url = urljoin(endpoint, version, 'public', api)
-  request(url, opt, cb)
+  return request(url, opt, cb)
 }

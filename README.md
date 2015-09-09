@@ -50,7 +50,7 @@ In the browser, and once you've set up referrers, the `privateKey` field is not 
 
 [![NPM](https://nodei.co/npm/marvel-comics-api.png)](https://www.npmjs.com/package/marvel-comics-api)
 
-#### `marvelApi(api, opt, cb)`
+#### `req = marvelApi(api, opt, cb)`
 
 Requests the given `api` string, like `'characters'` or `'{characterId}/stories'`. 
 
@@ -70,6 +70,10 @@ Options:
 Other parameters will be sent to [got](npmjs.com/package/got) (node) and [xhr](npmjs.com/package/xhr).
 
 The `cb` is called with `(err, body, response)` where `err` will be null/undefined if the request succeeds, `body` will be a parsed JSON object from the request, and `response` will be the response headers from the XHR/HTTP request.
+
+#### `req.abort()`
+
+Aborts the request early, sending an error to the callback.
 
 ## Private Key
 
